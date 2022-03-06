@@ -1,0 +1,2 @@
+module ComicCommentsHelper
+end

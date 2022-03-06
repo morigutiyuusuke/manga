@@ -1,0 +1,2 @@
+class ComicCommentsController < ApplicationController
+end
