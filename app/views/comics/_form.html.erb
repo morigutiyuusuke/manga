@@ -1,0 +1,13 @@
+<%= form_with model: @comic,local:true do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control comic_title' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :opinion %>
+    <%= f.text_area :body, class: 'form-control comic_body' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit :aa, class: 'btn btn-success' %>
+  </div>
+<% end %>

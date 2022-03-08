@@ -1,0 +1,29 @@
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>User info</h2>
+      <%= render 'users/info', user: current_user %>
+      <h2 class="mt-3">New manga</h2>
+      <%= render 'form', comic: @comic %>
+    </div>
+    <div class='col-md-8 offset-md-1'>
+      <h2>Manga detail</h2>
+  		<table class='table'>
+  		 <tr>
+  		<td><%= link_to(@comic.user) do %>
+          <%= image_tag @comic.user.get_profile_image, size:"100x100" %><br>
+          <%= @comic.user.name %>
+          <% end %>
+          </td>
+          <td><%= link_to @comic.title, @comic %></td>
+          <td><%= @comic.body %></td>
+          </td>
+          <% if @comic.user == current_user %>
+          <td><%= link_to 'Edit', edit_comic_path(@comic), class: "btn btn-sm btn-success edit_book_#{@comic.id}" %></td>
+          <td><%= link_to 'Destroy', @comic, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@comic.id}"%></td>
+          <% end %>
+       </tr>
+      </table>
+    </div>
+  </div>
+</div>

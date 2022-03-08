@@ -1,0 +1,23 @@
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% comics.each do |comic| %>
+      <tr>
+        <td><%= link_to(comic.user) do %>
+          <%= image_tag comic.user.get_profile_image, size:'50x50' %>
+          <% end %>
+        </td>
+        <td><%= link_to comic.title,comic, class: "comic_#{comic.id}" %></td>
+        <td><%= comic.body %></td>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

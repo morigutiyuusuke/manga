@@ -1,0 +1,22 @@
+<table class='table'>
+  <tr><%= image_tag user.get_profile_image, size:'100x100' %></tr>
+  <tr>
+	  <th>name</th>
+	  <th><%= user.name %></th>
+  </tr>
+  <tr>
+	  <th>introduction</th>
+	  <th><%= user.introduction %></th>
+  </tr>
+  <tr>
+    <th>follows</th>
+	  <td><%#= link_to user.followings.count, user_followings_path(user.id) %></td>
+  </tr>
+  <tr>
+    <th>followers</th>
+     <td><%#= link_to user.followers.count, user_followers_path(user.id) %></td>
+  </tr>
+</table>
+<%= link_to edit_user_path(user), class: "btn btn-outline-secondary btn-block edit_user_#{user.id}" do %>
+    <i class="fas fa-user-cog"></i>
+<% end %>
