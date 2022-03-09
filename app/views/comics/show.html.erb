@@ -17,13 +17,31 @@
           </td>
           <td><%= link_to @comic.title, @comic %></td>
           <td><%= @comic.body %></td>
+          <td id="favorite_buttons_<%= @comic.id %>">
+            <%= render "favorites/favorites", comic: @comic %>
           </td>
           <% if @comic.user == current_user %>
-          <td><%= link_to 'Edit', edit_comic_path(@comic), class: "btn btn-sm btn-success edit_book_#{@comic.id}" %></td>
-          <td><%= link_to 'Destroy', @comic, method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_book_#{@comic.id}"%></td>
+          <td><%= link_to 'Edit', edit_comic_path(@comic), class: "btn btn-sm btn-success edit_comic_#{@comic.id}" %></td>
+          <td><%= link_to 'Destroy', comic_path(@comic), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_comic_#{@comic.id}"%></td>
           <% end %>
        </tr>
       </table>
+      <div>
+        <p>コメント件数：
+          <span id="num_of_comments">
+            <%= @comic.comic_comments.count %>
+          </span>
+        </p>
+        <div id="commentOutline">
+          <%= render partial: "comic_comments/comment", locals: { comic: @comic }%>
+        </div>
+      </div>
+        <div>
+        <%= form_with(model:[@comic, @comic_comment], local: false) do |f| %>
+          <%= f.text_area :comment, rows:'5',placeholder: "コメントをここに", id: "inputComment" %>
+          <%= f.submit "送信する" %>
+        <% end %>
+        </div>
     </div>
   </div>
 </div>

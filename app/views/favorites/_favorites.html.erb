@@ -1,0 +1,9 @@
+<% if comic.favorited_by?(current_user) %>
+  <%= link_to comic_favorites_path(comic), method: :delete, remote: true do %>
+  ♥<%= comic.favorites.count %>いいね
+  <% end %>
+<% else %>
+  <%= link_to comic_favorites_path(comic), method: :post, remote: true do %>
+  ♡<%= comic.favorites.count %>いいね
+  <% end %>
+<% end %>

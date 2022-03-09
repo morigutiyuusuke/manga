@@ -3,10 +3,13 @@ class ComicsController < ApplicationController
     @comic = Comic.find(params[:id])
     @user = @comic.user
     @newcomic = Comic.new
+    @comic_comment = ComicComment.new
+    @comments = @comic.comic_comments
   end
   def index
-    @comics = Comic.all
+    #@comics = Comic.all
     @comic = Comic.new
+    @comics = Comic.page(params[:page]).reverse_order
   end
   def create
     @comic = Comic.new(comic_params)
@@ -34,7 +37,7 @@ class ComicsController < ApplicationController
   def destroy
     @comic = Comic.find(params[:id])
     @comic.destroy
-    redirect_to comi_path
+    redirect_to comics_path
   end
   
   private

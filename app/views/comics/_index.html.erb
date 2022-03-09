@@ -16,8 +16,11 @@
         </td>
         <td><%= link_to comic.title,comic, class: "comic_#{comic.id}" %></td>
         <td><%= comic.body %></td>
+        <td id="favorite_buttons_<%= comic.id %>">
+          <%= render "favorites/favorites", comic: comic %>
         </td>
+        <td><%= link_to "#{comic.comic_comments.count} コメント", comic_path(comic.id) %></td>
       </tr>
-    <% end %>
+         <% end %>
   </tbody>
 </table>

@@ -34,7 +34,6 @@ def unfollow(user_id)
   relationships.find_by(followed_id: user_id).destroy
 end
 # フォローしているか判定
-end
 
 def following?(user)
   followings.include?(user)
@@ -50,3 +49,5 @@ end
       User.where('name LIKE ?', '%' + content + '%')
     end
  end
+
+end

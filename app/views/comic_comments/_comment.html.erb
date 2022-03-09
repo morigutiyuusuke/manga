@@ -1,0 +1,13 @@
+<% comic.comic_comments.each do |comic_comment| %>
+  <p><%#= image_tag('sample-author1.jpg') %></p>
+  <%= comic_comment.user.name %>
+  <%= comic_comment.created_at.strftime('%Y/%m/%d') %><%= comic_comment.comment %>
+  <% if comic_comment.user == current_user %>
+  <div>
+    <%= link_to  comic_comic_comment_path(comic_comment.comic_id, comic_comment.id), method: :delete, remote: true do %>
+    <p>削除</p>
+    <% end %>
+  </div>
+  <% end %>
+  
+<% end %>

@@ -1,4 +1,4 @@
-class Comment < ApplicationRecord
+class ComicComment < ApplicationRecord
   belongs_to :user
   belongs_to :comic
   

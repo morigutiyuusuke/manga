@@ -1,7 +1,13 @@
  <div class='container px-5 px-sm-0'>
   <div class='row'>
     <div class='col-md-3'>
- <h2>User info</h2>
+      <h2>User info</h2>
+  <% if @comic.errors.any? %>
+  <%= @comic.errors.count %> error prohibited this obj from being saved:
+  <% @comic.errors.full_messages.each do |message| %>
+    <%= message %>
+   <% end %>
+  <% end %>
   <%= render 'users/info', user: current_user %>
  <h2 class="mt-3">New manga</h2>
   <%= render 'form', comic: @comic %>
@@ -12,3 +18,4 @@
     </div>
   </div>
  </div>
+ <%= paginate @comics %>
