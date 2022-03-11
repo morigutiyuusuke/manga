@@ -17,7 +17,7 @@ class ComicsController < ApplicationController
     if @comic.save
       redirect_to comic_path(@comic), notice: "You have created book successfully."
     else
-      @comic = Comic.all
+      @comics = Comic.page(params[:page]).reverse_order
       render 'index'
     end
   end
@@ -39,7 +39,7 @@ class ComicsController < ApplicationController
     @comic.destroy
     redirect_to comics_path
   end
-  
+
   private
 
   def comic_params
