@@ -9,7 +9,11 @@ class ComicsController < ApplicationController
   def index
     #@comics = Comic.all
     @comic = Comic.new
-    @comics = Comic.page(params[:page]).reverse_order
+    #@comics = Comic.page(params[:page]).reverse_order
+    @comics = Comic.includes(:favorites_users).sort {|a,b| b.favorites_users.size <=> a.favorites_users.size}
+   # binding.pry
+   # @comics.page(params[:page]).reverse_order
+
   end
   def create
     @comic = Comic.new(comic_params)

@@ -6,6 +6,7 @@ class User < ApplicationRecord
          
   has_many :comics, dependent: :destroy
   has_many :comic_comments, dependent: :destroy
+  has_many :favorites_comics, through: :favorites, source: :comic
   has_many :favorites, dependent: :destroy
   # フォローをした、されたの関係
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
