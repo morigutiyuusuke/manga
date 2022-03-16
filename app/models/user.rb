@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
+
   has_many :comics, dependent: :destroy
   has_many :comic_comments, dependent: :destroy
   has_many :favorites_comics, through: :favorites, source: :comic
@@ -16,12 +16,14 @@ class User < ApplicationRecord
   has_many :followings, through: :relationships, source: :followed
   has_many :followers, through: :reverse_of_relationships, source: :follower
   has_one_attached :profile_image
+  has_many :user_rooms, dependent: :destroy
+  has_many :chats, dependent: :destroy
 
   validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
    validates :introduction,  length: {  maximum: 50 }
 
-  
-  
+
+
   def get_profile_image
     (profile_image.attached?) ? profile_image : 'no_image.jpg'
   end

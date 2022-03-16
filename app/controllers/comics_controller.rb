@@ -50,7 +50,7 @@ class ComicsController < ApplicationController
   private
 
   def comic_params
-    params.require(:comic).permit(:title, :body, :genre)
+    params.require(:comic).permit(:title, :body, :genre, :author)
   end
 
   def correct_user

@@ -1,7 +1,11 @@
-<%= form_with model: @comic,local:true do |f| %>
+<%= form_with model: comic,local:true do |f| %>
   <div class="form-group">
     <%= f.label :タイトル %>
     <%= f.text_field :title, class: 'form-control comic_title' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :作者 %>
+    <%= f.text_field :author, class: 'form-control comic_author' %>
   </div>
   <div class="form-group">
     <%= f.label :ジャンル %>

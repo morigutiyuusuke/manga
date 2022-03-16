@@ -29,4 +29,9 @@
     <i class="fas fa-user-cog"></i>
   <% end %>
   <% end %>
+  <!-- current_userと@userが一致していないかつフォローしている時に`Begin Chat`を表示 -->
+
+  <% if current_user != user && current_user.following?(user)%>
+   <%= link_to 'Begin Chat', chat_path(user.id),class: "btn btn-warning" %>
+  <% end %>
 </div>
