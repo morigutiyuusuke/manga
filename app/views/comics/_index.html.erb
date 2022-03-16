@@ -4,6 +4,7 @@
       <th></th>
       <th>タイトル</th>
       <th>説明</th>
+      <th>ジャンル</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
         </td>
         <td><%= link_to comic.title,comic, class: "comic_#{comic.id}" %></td>
         <td><%= comic.body %></td>
+        <td><%= comic.genre %></td>
         <td id="favorite_buttons_<%= comic.id %>">
           <%= render "favorites/favorites", comic: comic %>
         </td>

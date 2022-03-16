@@ -1,8 +1,26 @@
 <div class="container">
   <div class="row">
     <div class='mx-auto col-11 col-sm-10 col-lg-8 col-xl-6'>
+       <h2 class="mt-3">いいねランキング！</h2>
       <% @comics1.each do |comic|%>
       <%= comic.title %>
+      <%= comic.genre %>
+      <% end %>
+      <% @comics2.each do |comic|%>
+      <%= comic.title %>
+      <%= comic.genre %>
+      <% end %>
+      <% @comics3.each do |comic|%>
+      <%= comic.title %>
+      <%= comic.genre %>
+      <% end %>
+      <% @comics4.each do |comic|%>
+      <%= comic.title %>
+      <%= comic.genre %>
+      <% end %>
+      <% @comics5.each do |comic|%>
+      <%= comic.title %>
+      <%= comic.genre %>
       <% end %>
         <h1>ようこそ <i class="fas fa-book"></i><strong>Manga</strong>  !!</h1>
         <p>In  <i class="fas fa-book"></i><strong>manga</strong>, </p>
