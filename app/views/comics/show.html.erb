@@ -17,6 +17,7 @@
           </td>
           <td><%= link_to @comic.title, @comic %></td>
           <td><%= @comic.body %></td>
+          <td><%= @comic.genre %></td>
           <td id="favorite_buttons_<%= @comic.id %>">
             <%= render "favorites/favorites", comic: @comic %>
           </td>

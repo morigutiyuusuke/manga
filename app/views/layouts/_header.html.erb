@@ -1,7 +1,7 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="/"><span>Manga</span></a>
+      <a class="navbar-brand" href="/"><span>トップページ</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -10,43 +10,43 @@
         <% if user_signed_in? %>
           <li>
             <%= link_to user_path(current_user),class: 'nav-link text-light' do %>
-              <i class="fas fa-home"></i> home
+              <i class="fas fa-home"></i> マイページ
             <% end %>
           </li>
           <li>
             <%=  link_to users_path,class: 'nav-link text-light' do %>
-              <i class="fas fa-users"></i> users
+              <i class="fas fa-users"></i> ユーザ一覧
             <% end %>
           </li>
           <li>
             <%=  link_to comics_path ,class: 'nav-link text-light' do %>
-              <i class="fas fa-book-open"></i> manga
+              <i class="fas fa-book-open"></i> 漫画一覧
             <% end %>
           </li>
           <li>
             <%= link_to destroy_user_session_path, method: :delete,class: 'nav-link text-light' do %>
-              <i class="fas fa-sign-out-alt"></i> Logout
+              <i class="fas fa-sign-out-alt"></i> ログアウト
             <% end %>
           </li>
         <% else %>
           <li>
             <%= link_to root_path,class: 'nav-link text-light' do %>
-              <i class="fas fa-home"></i> home
+              <i class="fas fa-home"></i> トップページ
             <% end %>
           </li>
           <li>
             <%= link_to about_path,class: 'nav-link text-light' do %>
-              <i class="fas fa-link"></i> about
+              <i class="fas fa-link"></i> 紹介ページ
             <% end %>
           </li>
           <li>
             <%= link_to new_user_registration_path,class: 'nav-link text-light' do %>
-              <i class="fas fa-user-plus"></i> Sign up
+              <i class="fas fa-user-plus"></i> 会員登録
             <% end %>
           </li>
           <li>
             <%= link_to new_user_session_path ,class: 'nav-link text-light' do %>
-              <i class="fas fa-sign-in-alt"></i> Login
+              <i class="fas fa-sign-in-alt"></i> ログイン
             <% end %>
           </li>
         <% end %>

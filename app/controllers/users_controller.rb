@@ -20,7 +20,7 @@ class UsersController < ApplicationController
         render "edit"
         end
     end
-    
+
     def user_params
         params.require(:user).permit(:name, :introduction, :profile_image)
     end

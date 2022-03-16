@@ -1,4 +1,7 @@
 class ComicsController < ApplicationController
+
+  before_action :correct_user, only: [:edit, :update]
+
   def show
     @comic = Comic.find(params[:id])
     @user = @comic.user
@@ -47,6 +50,11 @@ class ComicsController < ApplicationController
   private
 
   def comic_params
-    params.require(:comic).permit(:title, :body)
+    params.require(:comic).permit(:title, :body, :genre)
+  end
+
+  def correct_user
+    @comic = Comic.find(params[:id])
+    redirect_to(comics_path) unless @comic.user == current_user
   end
 end

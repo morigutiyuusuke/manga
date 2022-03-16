@@ -1,19 +1,19 @@
 <table class='table'>
   <tr><%= image_tag user.get_profile_image, size:'100x100' %></tr>
   <tr>
-	  <th>name</th>
+	  <th>名前</th>
 	  <th><%= user.name %></th>
   </tr>
   <tr>
-	  <th>introduction</th>
+	  <th>紹介</th>
 	  <th><%= user.introduction %></th>
   </tr>
   <tr>
-    <th>follows</th>
+    <th>フォロー</th>
 	  <td><%= link_to user.followings.count, user_followings_path(user.id) %></td>
   </tr>
   <tr>
-    <th>followers</th>
+    <th>フォロワー</th>
      <td><%= link_to user.followers.count, user_followers_path(user.id) %></td>
   </tr>
 </table>
