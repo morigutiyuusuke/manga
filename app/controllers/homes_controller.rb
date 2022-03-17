@@ -6,6 +6,7 @@ class HomesController < ApplicationController
     @comics3 = Comic.where(genre: '青年')
     @comics4 = Comic.where(genre: '女性')
     @comics5 = Comic.where(genre: 'BL')
+    @ranks = Comic.joins(:favorites).group(:id).order("count(favorites.comic_id) desc").first(5)
   end
   def about
   end

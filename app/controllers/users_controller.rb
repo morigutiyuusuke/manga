@@ -4,10 +4,11 @@ class UsersController < ApplicationController
         @comic = Comic.new
         @user = User.find(params[:id])
         @comics = @user.comics
+        @comics = @user.comics.page(params[:page])
     end
     def index
          @comic = Comic.new
-         @users = User.all
+         @users = User.all.page(params[:page])
     end
     def edit
         @user = User.find(params[:id])

@@ -7,8 +7,10 @@ class SearchesController < ApplicationController
       @method=params[:method]
       if @model == 'user'
         @records=User.search_for(@content,@method)
-      else
+      elsif @model=='comic'
         @records=Comic.search_for(@content,@method)
+      else
+        @records = Comic.where(genre: @content)
       end
     end
 end
