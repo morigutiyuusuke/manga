@@ -117,19 +117,19 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-  config.hosts << "b79d751e3e274f059f7b4ced7048fbb0.vfs.cloud9.us-east-1.amazonaws.com"
-  config.active_job.queue_adapter = :inline
-  config.hosts << "6de47081ee9a46d2be11c4aa3dae14b9.vfs.cloud9.ap-northeast-1.amazonaws.com"
+  # config.hosts << "b79d751e3e274f059f7b4ced7048fbb0.vfs.cloud9.us-east-1.amazonaws.com"
+  # config.active_job.queue_adapter = :inline
+  # config.hosts << "6de47081ee9a46d2be11c4aa3dae14b9.vfs.cloud9.ap-northeast-1.amazonaws.com"
 
   #config.hosts << "http://54.250.198.200/"
   #config.action_mailer.default_url_options = { :host => '54.250.198.200' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-      port: 587,
-      address: 'smtp.gmail.com',
-      domain: 'smtp.gmail.com',
-      user_name: ENV['SMTP_USERNAME'],
-      password: ENV['SMTP_PASSWORD'],
-      enable_starttls_auto: true
-  }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #     port: 587,
+  #     address: 'smtp.gmail.com',
+  #     domain: 'smtp.gmail.com',
+  #     user_name: ENV['SMTP_USERNAME'],
+  #     password: ENV['SMTP_PASSWORD'],
+  #     enable_starttls_auto: true
+  # }
 end
