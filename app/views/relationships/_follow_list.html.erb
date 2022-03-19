@@ -1,11 +1,11 @@
 <% if users.exists? %>
   <% users.each do |user| %>
     <table class='table'>
-      <h2>Follower User</h2>
+      <h2>フォロワー</h2>
       <thead>
         <tr>
-          <th>image</th>
-          <th>name</th>
+          <th>画像</th>
+          <th>名前</th>
           <th></th>
           <th></th>
         </tr>
@@ -20,12 +20,12 @@
           <td>
           </td>
           <td>フォロワー数: <%= user.followers.count %></td>
-          <td><%= link_to 'Show', user, class: "user_#{user.id}" %></td>
+          <td><%= link_to '詳細', user, class: "user_#{user.id}" %></td>
         </tr>
       </tbody>
     </table>
   <% end %>
 <% else %>
-  <h2>Follow User</h2>
+  <h2>フォロー</h2>
   <p>ユーザーはいません</p>
 <% end %>

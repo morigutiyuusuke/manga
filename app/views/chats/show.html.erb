@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-6">
-            <h2>CHAT WITH <%= @user.name %></h2>
+            <h2>チャット <%= @user.name %></h2>
 
             <table class="message table">
               <thead>
@@ -34,7 +34,7 @@
             <%= form_with model: @chat, remote: true do |f| %>
               <%= f.text_field :message %>
               <%= f.hidden_field :room_id %>
-              <%= f.submit "SEND", class:"btn btn-sm btn-success chat-btn" %>
+              <%= f.submit "送信", class:"btn btn-sm btn-success chat-btn" %>
             <% end %>
         </div>
     </div>

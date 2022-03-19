@@ -1,13 +1,13 @@
 <div class='container'>
   <div class='row'>
     <div class='col-md-3'>
-        <h2>User info</h2>
+        <h2>ユーザー情報</h2>
         <%= render 'users/info', user: current_user %>
-        <h2 class="mt-3">New manga</h2>
+        <h2 class="mt-3">>新規投稿</h2>
         <%= render 'form', comic: @newcomic %>
     </div>
       <div class='col-md-8 offset-md-1'>
-        <h2>Manga detail</h2>
+        <h2>漫画 詳細</h2>
     		<table class='table'>
     		 <tr>
     		<td><%= link_to(@comic.user) do %>
@@ -22,8 +22,8 @@
               <%= render "favorites/favorites", comic: @comic %>
             </td>
             <% if @comic.user == current_user %>
-            <td><%= link_to 'Edit', edit_comic_path(@comic), class: "btn btn-sm btn-success edit_comic_#{@comic.id}" %></td>
-            <td><%= link_to 'Destroy', comic_path(@comic), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_comic_#{@comic.id}"%></td>
+            <td><%= link_to '編集', edit_comic_path(@comic), class: "btn btn-sm btn-success edit_comic_#{@comic.id}" %></td>
+            <td><%= link_to '削除', comic_path(@comic), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm btn-danger destroy_comic_#{@comic.id}"%></td>
             <% end %>
          </tr>
         </table>

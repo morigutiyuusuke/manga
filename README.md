@@ -1,16 +1,16 @@
 # manga-情報共有サイト
 
 ## サイト概要
-mangaとは漫画が好きの人のためのSNSです。  
-情報収集するためフォロー機能であったりコメント機能を利用して共有します。　　
+mangaとは漫画が好きの人のためのSNSです。
+情報収集するためフォロー機能であったりコメント機能を利用して共有します。
 
 それにより漫画ファンの交流サイトなり交流を深めことが可能です。
 いいね機能やランキング機能を設けることによりサイト利用率を向上を目的とします。
 
-※画像投稿に関しましては著作権関係上、漫画のコマなどの掲載はお控えください  
+※画像投稿に関しましては著作権関係上、漫画のコマなどの掲載はお控えください
 
 ### サイトテーマ
-mangaに関係する情報のみを取り扱ったSNSです  
+mangaに関係する情報のみを取り扱ったSNSです
 
 ### テーマを選んだ理由
 近年SNSの発達により情報が簡単に収集できる世の中になりましたが、
@@ -30,9 +30,12 @@ SNSに限らずインターネットでの検索に関しても同じような�
 - ランキング機能を設けてオススメの漫画を表示する
 
 ## 設計書
-
-
-
+- 【ER図】【ワイヤーフレーム】】
+- https://app.diagrams.net/#G1wFWj8O8zUeRgnn0rkt48Hl1O9Epqb8DU
+- 【テーブル定義書】】
+- https://docs.google.com/spreadsheets/d/1KaKaWME30c1JHfXvUr9f1uY8_46XGe8X/edit#gid=932384854
+- 【アプリケーション詳細設計書】
+- https://docs.google.com/spreadsheets/d/1ZRYrCgTr6NM331a5t0qWnIPE-iWILdT8/edit#gid=1340030419
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1FgREnh_czLFVfqBEXTjrnjO7nzVwUu1-z94jFI3zowA/edit#gid=0
 

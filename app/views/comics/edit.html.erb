@@ -1,7 +1,7 @@
 <div class='container'>
   <div class='row'>
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-  		<h1>Editing </h1>
+  		<h1>編集</h1>
   		<% if @comic.errors.any? %>
       <%= @comic.errors.count %> error prohibited this obj from being saved:
       <% @comic.errors.full_messages.each do |message| %>
@@ -9,8 +9,8 @@
       <% end %>
       <% end %>
     		<%= render 'form', comic: @comic %>
-    		<%= link_to 'Show', @comic, class: "comic_#{@comic.id}" %> |
-    		<%= link_to 'Back', comics_path, class: "back" %>
+    		<%= link_to '詳細', @comic, class: "comic_#{@comic.id}" %> |
+    		<%= link_to 'バック', comics_path, class: "back" %>
   	</div>
   </div>
 </div>

@@ -20,7 +20,7 @@
         <% else %>
         <td><%= link_to "フォローする", user_relationships_path(user.id), method: :post %></td>
         <% end %>
-        <td><%= link_to 'Show', user, class: "user_#{user.id}" %></td>
+        <td><%= link_to '詳細', user, class: "user_#{user.id}" %></td>
       </tr>
     <% end %>
   </tbody>
