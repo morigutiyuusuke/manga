@@ -1,25 +1,29 @@
-<%= form_for(@contact, url: confirm_path) do |f| %>
-  <div class="form-group">
-    <%= f.label :name, 'お名前*' %>
-    <%= f.text_field :name, autofocus: true, class: 'form-control' %>
-  </div>
+<div class='container px-5 px-sm-0'>
+  <h3>【お問い合わせフォーム】</h3>
+      <%= form_for(@contact, url: confirm_path) do |f| %>
+      <%= render "layouts/errors", obj: @contact %>
+    <div class="form-group">
+      <%= f.label :name, 'お名前*' %>
+      <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :email, 'メールアドレス' %>
-    <%= f.text_field :email, autofocus: true, class: 'form-control' %>
-  </div>
+    <div class="form-group">
+      <%= f.label :email, 'メールアドレス' %>
+      <%= f.text_field :email, autofocus: true, class: 'form-control' %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :phone_number, '電話番号' %>
-    <%= f.text_field :phone_number, autofocus: true, class: 'form-control' %>
-  </div>
+    <div class="form-group">
+      <%= f.label :phone_number, '電話番号' %>
+      <%= f.text_field :phone_number, autofocus: true, class: 'form-control' %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :message, 'お問い合わせ内容' %>
-    <%= f.text_area :message, size: '10x10', class: 'form-control' %>
-  </div>
+    <div class="form-group">
+      <%= f.label :message, 'お問い合わせ内容' %>
+      <%= f.text_area :message, size: '10x10', class: 'form-control' %>
+    </div>
 
-  <div>
-    <%= f.submit '送信' %>
-  </div>
-<% end %>
+    <div>
+      <%= f.submit '送信' %>
+    </div>
+  <% end %>
+</div>
