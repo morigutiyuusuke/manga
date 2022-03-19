@@ -122,7 +122,7 @@ Rails.application.configure do
   config.hosts << "6de47081ee9a46d2be11c4aa3dae14b9.vfs.cloud9.ap-northeast-1.amazonaws.com"
 
   #config.hosts << "http://54.250.198.200/"
-  config.action_mailer.default_url_options = { :host => '54.250.198.200' }
+  #config.action_mailer.default_url_options = { :host => '54.250.198.200' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       port: 587,
