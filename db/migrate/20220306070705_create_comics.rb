@@ -6,6 +6,7 @@ class CreateComics < ActiveRecord::Migration[6.1]
       t.integer :user_id
       t.string :author
       t.string :genre
+      t.float :rate
       t.timestamps
     end
   end

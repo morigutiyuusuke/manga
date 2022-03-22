@@ -5,6 +5,7 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         @comics = @user.comics
         @comics = @user.comics.page(params[:page])
+        
     end
     def index
          @comic = Comic.new

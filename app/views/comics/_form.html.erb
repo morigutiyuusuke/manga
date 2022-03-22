@@ -11,6 +11,27 @@
     <%= f.label :説明 %>
     <%= f.text_area :body, class: 'form-control comic_body' %>
   </div>
+  <!--評価-->
+  <div class="form-group" id="star">
+    <%= f.label :評価 %>
+    <%= f.hidden_field :rate, id: :review_star, class:'form-control' %>
+  </div>
+  <!--評価javascript-->
+    <script>
+    $(document).on('turbolinks:load', function() {
+      $('#star').empty();
+      $('#star').raty({
+        size     : 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        scoreName: 'comic[rate]',
+        half: true,
+      });
+    })
+    </script>
+
+
   <div class="form-group">
     <%= f.submit :投稿, class: 'btn btn-success' %>
   </div>

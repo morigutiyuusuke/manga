@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2022_03_16_043139) do
     t.integer "user_id"
     t.string "author"
     t.string "genre"
+    t.float "rate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

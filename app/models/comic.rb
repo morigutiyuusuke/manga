@@ -10,6 +10,9 @@ class Comic < ApplicationRecord
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
+  
+  # ソート機能
+  scope :recent, -> { order(created_at: :desc) }
 
   def self.search_for(content, method)
     if method == 'perfect'

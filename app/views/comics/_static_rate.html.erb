@@ -1,0 +1,16 @@
+<div class="rate_<%= comic.id %>" class="form-group">
+</div>
+    <script>
+    $(document).on('turbolinks:load', function() {
+      $('.rate_<%= comic.id %>').empty();
+      $('.rate_<%= comic.id %>').raty({
+        size     : 36,
+        readOnly: true,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        score: '<%= comic.rate %>',
+        half: true,
+      });
+    })
+    </script>

@@ -10,13 +10,25 @@ class ComicsController < ApplicationController
     @comments = @comic.comic_comments
   end
   def index
-    #@comics = Comic.all
     @comic = Comic.new
+    @comics = Comic.left_joins(:favorites).group(:id).order("count(favorites.comic_id) desc").page(params[:page])
+    # ソート機能
+    if params[:sort] == "new_arrival_order"
+      @comics = Comic.page(params[:page]).order(created_at: :desc)
+    elsif params[:sort] == "posting_order"
+      @comics = Comic.page(params[:page]).order(created_at: :asc)
+    #elsif params[:sort] == "highly_rated"
+      #@comics = Comic.page(params[:page]).order(rate: :desc)
+    #elsif params[:sort] == "low_rating"
+      #@comics = Comic.page(params[:page]).order(rate: :asc)
+    else
+      @comics = Comic.left_joins(:favorites).group(:id).order("count(favorites.comic_id) desc").page(params[:page])
+    end
+    #@comics = Comic.all
     #@comics = Comic.page(params[:page]).reverse_order
     #@comics = Comic.includes(:favorites_users).sort {|a,b| b.favorites_users.size <=> a.favorites_users.size}
-    @comics = Comic.left_joins(:favorites).group(:id).order("count(favorites.comic_id) desc").page(params[:page])
-   # binding.pry
-   # @comics.page(params[:page]).reverse_order
+    #binding.pry
+    #@comics.page(params[:page]).reverse_order
 
   end
   def create
@@ -51,7 +63,7 @@ class ComicsController < ApplicationController
   private
 
   def comic_params
-    params.require(:comic).permit(:title, :body, :genre, :author)
+    params.require(:comic).permit(:title, :body, :genre, :rate)
   end
 
   def correct_user
