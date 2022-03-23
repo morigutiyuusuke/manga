@@ -18,6 +18,7 @@
         <td><%= link_to comic.title,comic, class: "comic_#{comic.id}" %></td>
         <td><%= comic.body %></td>
         <td><%= comic.genre %></td>
+         <td><%= render "comics/static_rate", comic: comic %></td>
         <td id="favorite_buttons_<%= comic.id %>">
           <%= render "favorites/favorites", comic: comic %>
         </td>
