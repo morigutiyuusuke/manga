@@ -16,6 +16,8 @@
             <h2>漫画</h2>
               <span><%= link_to "新着順",comics_path(sort: "new_arrival_order"), class: "btn btn-sm btn-link" %></span>
               <span><%= link_to "投稿順",comics_path(sort: "posting_order"), class: "btn btn-sm btn-link" %></span>
+              <span><%= link_to "高評価",comics_path(sort: "highly_rated"), class: "btn btn-sm btn-link" %></span>
+              <span><%= link_to "低評価",comics_path(sort: "low_rating"), class: "btn btn-sm btn-link" %></span>
             <%= render 'index', comics: @comics%>
       </div>
   </div>

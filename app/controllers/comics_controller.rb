@@ -17,10 +17,10 @@ class ComicsController < ApplicationController
       @comics = Comic.page(params[:page]).order(created_at: :desc)
     elsif params[:sort] == "posting_order"
       @comics = Comic.page(params[:page]).order(created_at: :asc)
-    #elsif params[:sort] == "highly_rated"
-      #@comics = Comic.page(params[:page]).order(rate: :desc)
-    #elsif params[:sort] == "low_rating"
-      #@comics = Comic.page(params[:page]).order(rate: :asc)
+    elsif params[:sort] == "highly_rated"
+      @comics = Comic.page(params[:page]).order(rate: :desc)
+    elsif params[:sort] == "low_rating"
+      @comics = Comic.page(params[:page]).order(rate: :asc)
     else
       @comics = Comic.left_joins(:favorites).group(:id).order("count(favorites.comic_id) desc").page(params[:page])
     end
