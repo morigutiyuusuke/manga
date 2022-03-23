@@ -85,4 +85,5 @@ Rails.application.configure do
       password: ENV['SMTP_PASSWORD'],
       enable_starttls_auto: true
   }
+  config.action_mailer.default_url_options = { host: '6de47081ee9a46d2be11c4aa3dae14b9.vfs.cloud9.ap-northeast-1.amazonaws.com' }
 end
